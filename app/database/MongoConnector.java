@@ -4,6 +4,7 @@ import com.mongodb.*;
 import database.constants.CollectionNames;
 
 import java.net.UnknownHostException;
+import java.util.Arrays;
 
 /**
  * Created by TAHKICT on 09/04/14.
@@ -38,8 +39,13 @@ public class MongoConnector implements DBConnector{
         while (cursor.hasNext())
         {
             values[count++] = cursor.next().toString();
+            System.out.println(values[count]);
+
         }
+        System.out.println(Arrays.toString(values));
+
         return values;
+
     }
 
     @Override
