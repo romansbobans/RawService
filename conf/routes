@@ -3,9 +3,11 @@
 # ~~~~
 
 # Home page
-GET     /raw/categories                           controllers.Application.getCategories()
+GET        /raw/categories        controllers.Application.getCategories()
 
-GET     /raw/views/:id                            controllers.Application.getViews(id: String)
+GET        /raw/views/:id         controllers.Application.getViews(id: String)
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET        /assets/*file          controllers.Assets.at(path="/public", file)
+
+GET         /public/images/*file    controllers.Assets.at(path="/public", file)
