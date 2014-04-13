@@ -33,13 +33,14 @@ public class MongoConnector implements DBConnector{
         DBCollection collection = database.getCollection(CollectionNames.CATEGORIES);
         DBCursor cursor = collection.find();
 
-        String[] values = new String[cursor.itcount()];
+        String[] values = new String[2];
         int count = 0;
 
         while (cursor.hasNext())
         {
-            values[count++] = cursor.next().toString();
-            System.out.println(values[count]);
+            String val = cursor.next().toString();
+            values[count++] = val;
+            System.out.println(val);
 
         }
         System.out.println(Arrays.toString(values));
